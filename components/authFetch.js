@@ -11,6 +11,11 @@ export default async function authFetch (url, options = {}, sessionToken) {
         'Content-Type': 'application/json',
         'Cookie': `sessionToken=${sessionToken}`, // Set the cookie manually
       };
+
+      console.log({
+        ...options,
+        headers,
+      });
   
       const response = await fetch(url, {
         ...options,
